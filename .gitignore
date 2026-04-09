@@ -9,3 +9,9 @@ wheels/
 # Virtual environments
 .venv
 .vercel
+.env
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
