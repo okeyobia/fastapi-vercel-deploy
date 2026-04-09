@@ -43,27 +43,31 @@ uvicorn app.main:app --reload
 
 This project is configured for deployment on Vercel using the `vercel.json` file. See [Vercel Python documentation](https://vercel.com/docs/frameworks/python) for more details.
 
+### vercel.json
+
+```json
+{
+	"builds": [
+		{
+			"src": "app/main.py",
+			"use": "@vercel/python"
+		}
+	],
+	"routes": [
+		{
+			"src": "/(.*)",
+			"dest": "app/main.py"
+		}
+	]
+}
+```
+
 ## Project Structure
 
 - `app/main.py` — FastAPI application entrypoint
 - `pyproject.toml` — Project metadata and dependencies
 - `.python-version` — Python version requirement
 - `vercel.json` — Vercel deployment configuration
-vercel.json
-{
-    "builds": [
-        {
-            "src": "app/main.py",
-            "use": "@vercel/python"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "app/main.py"
-        }
-    ]
-}
 
 
 
